@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div style="margin: 30px 0 0 50px;">
+    <p style="margin: 10px 0 0 0; font-size: 120%;">You can submit a semicolon-delimited list of keywords (no more than 20) for batch search.
+        <span id="example" style="margin-left: 20px; color: deepskyblue; cursor: pointer;">Use example</span></p>
+    <div style="margin-top: 10px;">
+        <form>
+        <div style="float: left; margin-top: 40px;margin-left: 150px;">
+            <select id="input1_1" style="width: 100px; font-size: 22px;" class="active">
+                <option value="miRNAname" selected="selected">miRNA</option>
+                <option value="Diseasename">Disease</option>
+            </select>
+        </div>
+        </form>
+        <script>
+            const sel = document.querySelector('#input1_1');
+            sel.onclick = function (){
+            const ind = sel.selectedIndex;
+            const val = sel[ind].value;
+            }
+        </script>
+
+{#        <div style="float: left; margin-left: 20px; margin-top: 40px;">#}
+{#            <select id="input1_2" style="width: 100px; font-size: 22px;" class="active">#}
+{#                <option value="exact" selected="selected">exact</option>#}
+{#                <option value="fuzzy">fuzzy</option>#}
+{#            </select>#}
+{#        </div>#}
+            <div style="float: left;width: 300px;">
+                <form method="get">
+                    <div class="input-group"style="float: left; margin-left: 20px;margin-top: 40px;">
+                        <input type="text" name="q" class="form-control" placeholder="Search for..."
+                               value="{{ search_data }}">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" >
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                      </span>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+
+<div id="searchresult"; style="float: none; margin-top: 100px; "></div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            $%$%$%
+        </div>
+
+        <!-- Table -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>miRNA name</th>
+                    <th>Evidence Code</th>
+                    <th>Disease name</th>
+                    <th>PMID</th>
+                    <th>Description</th>
+                    <th>Causality</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in queryset %}
+                <tr>
+                    <td>{{ obj.miRNAname }}</td>
+                    <td>{{ obj.EvidenceCode }}</td>
+                    <td>{{ obj.Diseasename }}</td>
+                    <td>{{ obj.PMID }}</td>
+                    <td>{{ obj.Description }}</td>
+                    <td>{{ obj.Causality }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" href="#">编辑</a>
+                        <a class="btn btn-danger btn-xs" href="#">删除</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <div class="clearfix">
+            <ul class="pagination">
+                {{ page_string }}
+            </ul>
+
+        </div>
+</div>
+
+
+{% endblock %}

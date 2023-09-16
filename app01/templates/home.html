@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+            <div style="float: left; width:48%; height: 500px; padding: 0 20px 0 10px;">
+            <h2 style="margin:40px 0 10px 0;" align="center">Welcome to the HMDD v4.0</h2>
+            <p style="text-align:justify;"><b>HMDD</b> (the <span style="color:red;">H</span>uman <span style="color:red;">m</span>icroRNA <span style="color:red;">D</span>isease <span style="color:red;">D</span>atabase)  is a database that curated experiment-supported evidence for human microRNA (miRNA) and disease associations. miRNAs are one class of important regulatory RNAs, which mainly repress gene express at the post-transcriptional level. Increasing reports have shown that miRNAs play important roles in various critical biological processes. For their importance, the dysfunctions of miRNAs are associated with a broad spectrum of diseases. The first version of HMDD was built in December 2007 and represents the first miRNA disease database in the world according to literature record.<br>&nbsp;&nbsp;&nbsp;&nbsp;Each entry in HMDD v1.0 has four items for annotation; they are miRNA name, disease name, the reference PubMed ID, and the evidence supporting the miRNA-association from the original paper.<br>&nbsp;&nbsp;&nbsp;&nbsp;HMDD v2.0 presents more detailed and comprehensive annotations to the human miRNA-disease association data, including miRNA-disease association data from the evidence of genetics, epigenetics, circulating miRNAs, and miRNA-target interactions. In addition, a “submission” function was implemented in the version 2.<br>&nbsp;&nbsp;&nbsp;&nbsp;HMDD v3.0 contains approximately 200.2% human miRNA-disease association more entries than the previous HMDD v2.0, with more specified evidence classification (6 evidence classes, 20 evidence codes). In addition, it also incorporates the third-party annotations about miRNAs and diseases and supplies disease-associated miRNA-target network visualization function.<br>&nbsp;&nbsp;&nbsp;&nbsp;Recently,<span style="color:darkorange;"> HMDD v4.0</span> are introduced, which showcases a 1.5-times increase in the number of human miRNA-disease association than HMDD v3.0 and contains 53,530 experimentally supported miRNA-disease association entries. Moreover, two newly categories of miRNA-disease associations, exosomal miRNAs and virus-encoded miRNAs, are added (8 categories, 23 evidence codes). Disease network analysis based on disease associated miRNAs are integrated to this version. HMDD will be timely and continuously updated with new miRNA-disease entries.</p>
+            <p style="color:red">This website has been tested by using Chrome, Microsoft Edge and Firefox browsers. Microsoft IE may not work well. </p>
+            </div>
+            <div style="float: left; width:46%; height: 500px; padding: 40px 0 0 30px;">
+            <p style="margin:10px 0;"><b>Statistics:</b><br/>
+                Currently, in HMDD v4.0, we manually collected 53,530 miRNA-disease association entries which include 1,817 human miRNA genes, 79 virus-derived miRNAs, and 2,360 diseases from 37,090 papers.
+            </p>
+
+            <p style="margin:15px 0 0 0;"><b>History:</b><br/>
+                <span>Jun, 2023, HMDD v4.0 was released.</span>
+                <span>Sep, 2022, HMDD v3.3 was released. Disease network analysis modules was implemented.</span><br/>
+                <span>March 27, 2019, HMDD v3.2 was released. Causality information was attached to each association.</span><br/>
+                <span>January 3, 2019, HMDD v3.1 was released.</span><br/>
+				June 28, 2018, HMDD v3.0 was released.<br/>
+                June 20, 2013, HMDD v2.0 was released.<br/>
+                January, 2012, HMDD has been updated for 27 times during the past four years.<br/>
+                January, 2011, HMDD has been updated for 19 times during the past three years.<br/>
+                October, 2008, an analysis and modeling paper based on the miRNA-disease association data in the HMDD database was published on PLoS ONE.<br/>
+                December, 2007, the original HMDD database was released.<br/>
+            </p>
+
+            <p style="margin:15px 0 0 0;"><b>Contact us</b><br/>
+				<span style="color:red">HMDD is free only for academic usage. For commercial usage, please Contact</span><br/>
+                Dr. Qinghua Cui, 38 Xueyuan Rd, Department of Biomedical Informatics, Peking University Health Science Center, Beijing 100191, China<br/>
+                Email: <a >cuiqinghua@hsc.pku.edu.cn</a><br/>
+                Homepage:<a href="http://www.cuilab.cn/"><span color="red"> http://www.cuilab.cn/ </span></a> </br>
+            </p>
+
+            <p style="margin:15px 0 0 0;"> Last Update: July-10, 2023</p>
+
+            </div>
+{% endblock %}

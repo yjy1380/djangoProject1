@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMDD v1.0</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css' %}">
+<!-- {#    href="\static\plugins\bootstrap-3.4.1\css\bootstrap.min.css"#} -->
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+
+    {% block css %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home/" > home </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/browse/" class="navbar">浏览</a></li>
+                <li><a href="/mirtargetnetwork/" class="navbar">mirna关系网</a></li>
+                <li><a href="/dieasenetwork/" class="navbar">疾病关系网</a></li>
+                <li><a href="/download/" class="navbar">下载</a></li>
+                <li><a href="/help/" class="navbar">帮助</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>
