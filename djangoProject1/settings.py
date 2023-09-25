@@ -32,6 +32,12 @@ for i in range(1, 16):
     graph.create(relation2)
 
 graph.run('MATCH (n:level) WITH n.name AS name, COLLECT(n) AS nodelist, COUNT(*) AS count WHERE count > 1 CALL apoc.refactor.mergeNodes(nodelist) YIELD node RETURN node')
+graph.run('MATCH (n:person) WITH n.name AS name, COLLECT(n) AS nodelist, COUNT(*) AS count WHERE count > 1 CALL apoc.refactor.mergeNodes(nodelist) YIELD node RETURN node')
+graph.run('MATCH (n:major) WITH n.name AS name, COLLECT(n) AS nodelist, COUNT(*) AS count WHERE count > 1 CALL apoc.refactor.mergeNodes(nodelist) YIELD node RETURN node')
+graph.run('MATCH (n:univer) WITH n.name AS name, COLLECT(n) AS nodelist, COUNT(*) AS count WHERE count > 1 CALL apoc.refactor.mergeNodes(nodelist) YIELD node RETURN node')
+
+
+
 graph.run('MATCH (entity1:person) , (entity2:major{name:entity1.major}) CREATE (entity1)-[:研究]->(entity2)')
 graph.run('MATCH (entity1:person) , (entity2:univer{name:entity1.univer}) CREATE (entity1)-[:学校]->(entity2)')
 graph.run('MATCH (entity1:person) , (entity2:level{name:entity1.level}) CREATE (entity1)-[:学位]->(entity2)')

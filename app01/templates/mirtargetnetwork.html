@@ -105,16 +105,20 @@
     </div>
 
 
-
-
+{% csrf_token %}
+{{ searchResult }}
 <script type="text/javascript">
-	var searchResult = [{"n1": {"name": "汤庸", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学位"}, "n2": {"name": "教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "汤庸", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学校"}, "n2": {"name": "华南师范大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "汤庸", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "研究"}, "n2": {"name": "计算机科学与技术", "cate": 2}, "relationCount": 0}, {"n1": {"name": "赵淦森", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学位"}, "n2": {"name": "教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "赵淦森", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学校"}, "n2": {"name": "华南师范大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "赵淦森", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "研究"}, "n2": {"name": "计算机科学与技术", "cate": 2}, "relationCount": 0}, {"n1": {"name": "曾碧卿", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学位"}, "n2": {"name": "教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "曾碧卿", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "学校"}, "n2": {"name": "华南师范大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "曾碧卿", "cate": 1, "major": "计算机科学与技术", "level": "教授", "university": "华南师范大学"}, "rel": {"name": "研究"}, "n2": {"name": "计算机科学与技术", "cate": 2}, "relationCount": 0}, {"n1": {"name": "刘海", "cate": 1, "major": "计算机科学与技术", "level": "副教授", "university": "华南师范大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "刘海", "cate": 1, "major": "计算机科学与技术", "level": "副教授", "university": "华南师范大学"}, "rel": {"name": "学校"}, "n2": {"name": "华南师范大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "刘海", "cate": 1, "major": "计算机科学与技术", "level": "副教授", "university": "华南师范大学"}, "rel": {"name": "研究"}, "n2": {"name": "计算机科学与技术", "cate": 2}, "relationCount": 0}, {"n1": {"name": "陈国华", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "陈国华", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "陈国华", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "方家轩", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "方家轩", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "方家轩", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "肖菁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "肖菁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "肖菁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "李丁丁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "李丁丁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "李丁丁", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "黄泳航", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "副教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "黄泳航", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "黄泳航", "cate": 1, "major": "知识图谱", "level": "副教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "李建国", "cate": 1, "major": "知识图谱", "level": "教授", "university": "北京大学"}, "rel": {"name": "学位"}, "n2": {"name": "教授", "cate": 4}, "relationCount": 0}, {"n1": {"name": "李建国", "cate": 1, "major": "知识图谱", "level": "教授", "university": "北京大学"}, "rel": {"name": "学校"}, "n2": {"name": "北京大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "李建国", "cate": 1, "major": "知识图谱", "level": "教授", "university": "北京大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "朱佳", "cate": 1, "major": "知识图谱", "level": "博导", "university": "清华大学"}, "rel": {"name": "学位"}, "n2": {"name": "博导", "cate": 4}, "relationCount": 0}, {"n1": {"name": "朱佳", "cate": 1, "major": "知识图谱", "level": "博导", "university": "清华大学"}, "rel": {"name": "学校"}, "n2": {"name": "清华大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "朱佳", "cate": 1, "major": "知识图谱", "level": "博导", "university": "清华大学"}, "rel": {"name": "研究"}, "n2": {"name": "知识图谱", "cate": 2}, "relationCount": 0}, {"n1": {"name": "毛承洁", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学位"}, "n2": {"name": "博导", "cate": 4}, "relationCount": 0}, {"n1": {"name": "毛承洁", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学校"}, "n2": {"name": "清华大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "毛承洁", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "研究"}, "n2": {"name": "软件工程", "cate": 2}, "relationCount": 0}, {"n1": {"name": "陈万德", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学位"}, "n2": {"name": "博导", "cate": 4}, "relationCount": 0}, {"n1": {"name": "陈万德", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学校"}, "n2": {"name": "清华大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "陈万德", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "研究"}, "n2": {"name": "软件工程", "cate": 2}, "relationCount": 0}, {"n1": {"name": "唐华", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学位"}, "n2": {"name": "博导", "cate": 4}, "relationCount": 0}, {"n1": {"name": "唐华", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学校"}, "n2": {"name": "清华大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "唐华", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "研究"}, "n2": {"name": "软件工程", "cate": 2}, "relationCount": 0}, {"n1": {"name": "叶小平", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学位"}, "n2": {"name": "博导", "cate": 4}, "relationCount": 0}, {"n1": {"name": "叶小平", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "学校"}, "n2": {"name": "清华大学", "cate": 3}, "relationCount": 0}, {"n1": {"name": "叶小平", "cate": 1, "major": "软件工程", "level": "博导", "university": "清华大学"}, "rel": {"name": "研究"}, "n2": {"name": "软件工程", "cate": 2}, "relationCount": 0}]
+    // 定义 Node 函数
+    var str1 = {{ searchResult|safe }}//要加  | safe
+    var searchResult = str1
+    console.log(searchResult);
+    console.log(searchResult[0]);
     //用表格列出所有的关系
     tableData = []
     for (var i = 0 ; i < searchResult.length ; i++){
         relationData = {} ;
         relationData['entity1'] = searchResult[i]['n1']['name'];
-        relationData['relation'] = searchResult[i]['rel']['name'] ;
+        relationData['relation'] = searchResult[i]['rel']['name'];
         relationData['entity2'] = searchResult[i]['n2']['name'] ;
         tableData.push(relationData) ;
     }
@@ -139,9 +143,8 @@
         node1 = {} ;
         node1['name'] = searchResult[i]['n1']['name'] ;
         node1['draggable'] = true ;
-        node1['category'] = searchResult[i]['n1']['cate'];
-
-
+        node1['category'] = 0 ;
+        {#node1['category'] = searchResult[i]['n1']['cate'];#}
 
 
         var flag = 1 ;
@@ -165,7 +168,8 @@
         node2 = {} ;
         node2['name'] = searchResult[i]['n2']['name'] ;
         node2['draggable'] = true ;
-        node2['category'] = searchResult[i]['n2']['cate'];
+        node2['category'] = i ;
+        {#node2['category'] = searchResult[i]['n2']['cate'];#}
 
 
 
@@ -401,63 +405,63 @@
 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- 词云脚本 -->
-{#    <script>#}
-{#        //knob#}
-{#        $(function() {#}
-{#            $(".knob").knob({#}
-{#                'draw': function() {#}
-{#                    $(this.i).val(this.cv + '%')#}
-{#                }#}
-{#            })#}
-{#        });#}
-{##}
-{#        //carousel#}
-{#        $(document).ready(function() {#}
-{##}
-{#            $("#owl-slider").owlCarousel({#}
-{#                navigation: true,#}
-{#                slideSpeed: 300,#}
-{#                paginationSpeed: 400,#}
-{#                singleItem: true#}
-{##}
-{#            });#}
-{#        });#}
-{##}
-{#        //custom select box#}
-{##}
-{#        $(function() {#}
-{#            $('select.styled').customSelect();#}
-{#        });#}
-{##}
-{#        /* ---------- Map ---------- */#}
-{#        $(function() {#}
-{#            $('#map').vectorMap({#}
-{#                map: 'world_mill_en',#}
-{#                series: {#}
-{#                    regions: [{#}
-{#                        values: gdpData,#}
-{#                        scale: ['#000', '#000'],#}
-{#                        normalizeFunction: 'polynomial'#}
-{#                    }]#}
-{#                },#}
-{#                backgroundColor: '#eef3f7',#}
-{#                onLabelShow: function(e, el, code) {#}
-{#                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');#}
-{#                }#}
-{#            });#}
-{#        });#}
-{##}
-{#        tagcloud({ //开启词云#}
-{#            //参数名: 默认值#}
-{#            selector: ".tagcloud", //元素选择器#}
-{#            fontsize: 15, //基本字体大小#}
-{#            radius: 55, //滚动半径#}
-{#            mspeed: "slow", //滚动最大速度#}
-{#            ispeed: "slow", //滚动初速度#}
-{#            direction: 135, //初始滚动方向#}
-{#            keep: true //鼠标移出组件后是否继续随鼠标滚动#}
-{#        });#}
-{#    </script>#}
+    <script>
+        //knob
+        $(function() {
+            $(".knob").knob({
+                'draw': function() {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        //carousel
+        $(document).ready(function() {
+
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+        //custom select box
+
+        $(function() {
+            $('select.styled').customSelect();
+        });
+
+        /* ---------- Map ---------- */
+        $(function() {
+            $('#map').vectorMap({
+                map: 'world_mill_en',
+                series: {
+                    regions: [{
+                        values: gdpData,
+                        scale: ['#000', '#000'],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
+                backgroundColor: '#eef3f7',
+                onLabelShow: function(e, el, code) {
+                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                }
+            });
+        });
+
+        tagcloud({ //开启词云
+            //参数名: 默认值
+            selector: ".tagcloud", //元素选择器
+            fontsize: 15, //基本字体大小
+            radius: 55, //滚动半径
+            mspeed: "slow", //滚动最大速度
+            ispeed: "slow", //滚动初速度
+            direction: 135, //初始滚动方向
+            keep: true //鼠标移出组件后是否继续随鼠标滚动
+        });
+    </script>
 
     <!-- 分类树脚本 -->
     <script>
