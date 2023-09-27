@@ -38,9 +38,24 @@ def dieasenetwork(request):
 
 
 def sortDict(searchResult):
-    # 未完成
-    pass
-
+    target_data = []
+    for item in searchResult:
+        n1 = {}
+        n1['cate'] = str(item['n1'].labels)
+        n1['name'] = item['n1']['name']
+        rel = {}
+        rel['name'] = item['rel'].__class__.__name__
+        n2 = {}
+        n2['cate'] = str(item['n2'].labels)
+        n2['name'] = item['n2']['name']
+        target_data.append({
+            'n1': n1,
+            'rel': rel,
+            'n2': n2
+        })
+    newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in
+                dict_item.items()} for dict_item in target_data]
+    return newdata
 
 class neo4jconn:
     def __init__(self):
@@ -51,9 +66,7 @@ class neo4jconn:
         # 关系查询:实体1
     def findRelationByEntity1(self, entity1):
         result = self.graph.run("MATCH (n1:person {name:\"" + entity1 + "\"})- [rel] -> (n2) RETURN n1,rel,n2").data()
-
-        # print(result[0][0]['name'])
-        # print(result[0][2].labels
+        # print(result[0][2].labels)
         # print(result[0][1].__class__.__name__)
         return result
 
@@ -102,104 +115,27 @@ def mirtargetnetwork(request):
         # 若只输入entity1,则输出与entity1有直接关系的实体和关系
         if (len(entity1) != 0 and len(relation) == 0 and len(entity2) == 0):
             searchResult = db.findRelationByEntity1(entity1)
-            target_data = []
-            for item in searchResult:
-                n1 = {}
-                n1['cate'] = item['n1']['name']
-                n1['name'] = item['n1']['name']
-                rel = {}
-                rel['name'] = item['rel'].__class__.__name__
-                n2 = {}
-                n2['cate'] = item['n2']['name']
-                n2['name'] = item['n2']['name']
-                target_data.append({
-                    'n1': n1,
-                    'rel': rel,
-                    'n2': n2
-                })
-            newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in dict_item.items()} for dict_item in target_data]
+            newdata=sortDict(searchResult)
             return render(request, 'mirtargetnetwork.html', {'searchResult': json.dumps(newdata, ensure_ascii=False)})
         # 若只输入entity2则,则输出与entity2有直接关系的实体和关系
         if (len(entity2) != 0 and len(relation) == 0 and len(entity1) == 0):
             searchResult = db.findRelationByEntity2(entity2)
-            target_data = []
-            for item in searchResult:
-                n1 = {}
-                n1['cate'] = item['n1']['name']
-                n1['name'] = item['n1']['name']
-                rel = {}
-                rel['name'] = item['rel'].__class__.__name__
-                n2 = {}
-                n2['cate'] = item['n2']['name']
-                n2['name'] = item['n2']['name']
-                target_data.append({
-                    'n1': n1,
-                    'rel': rel,
-                    'n2': n2
-                })
-            newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in
-                        dict_item.items()} for dict_item in target_data]
+            newdata = sortDict(searchResult)
             return render(request, 'mirtargetnetwork.html', {'searchResult': json.dumps(newdata, ensure_ascii=False)})
         # 若输入entity1和relation，则输出与entity1具有relation关系的其他实体
         if (len(entity1) != 0 and len(relation) != 0 and len(entity2) == 0):
             searchResult = db.findOtherEntities(entity1, relation)
-            target_data = []
-            for item in searchResult:
-                n1 = {}
-                n1['cate'] = item['n1']['name']
-                n1['name'] = item['n1']['name']
-                rel = {}
-                rel['name'] = item['rel'].__class__.__name__
-                n2 = {}
-                n2['cate'] = item['n2']['name']
-                n2['name'] = item['n2']['name']
-                target_data.append({
-                    'n1': n1,
-                    'rel': rel,
-                    'n2': n2
-                })
-            newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in dict_item.items()} for dict_item in target_data]
+            newdata=sortDict(searchResult)
             return render(request, 'mirtargetnetwork.html', {'searchResult': json.dumps(newdata, ensure_ascii=False)})
         # 若输入entity2和relation，则输出与entity2具有relation关系的其他实体
         if (len(entity2) != 0 and len(relation) != 0 and len(entity1) == 0):
             searchResult = db.findOtherEntities2(entity2, relation)
-            target_data = []
-            for item in searchResult:
-                n1 = {}
-                n1['cate'] = item['n1']['name']
-                n1['name'] = item['n1']['name']
-                rel = {}
-                rel['name'] = item['rel'].__class__.__name__
-                n2 = {}
-                n2['cate'] = item['n2']['name']
-                n2['name'] = item['n2']['name']
-                target_data.append({
-                    'n1': n1,
-                    'rel': rel,
-                    'n2': n2
-                })
-            newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in dict_item.items()} for dict_item in target_data]
+            newdata=sortDict(searchResult)
             return render(request, 'mirtargetnetwork.html', {'searchResult': json.dumps(newdata, ensure_ascii=False)})
         # 全为空 则输出整个知识图谱
         if (len(entity1) == 0 and len(relation) == 0 and len(entity2) == 0):
             searchResult = db.zhishitupu()
-            target_data = []
-            for item in searchResult:
-                n1 = {}
-                n1['cate'] = item['n1']['name']
-                n1['name'] = item['n1']['name']
-                rel = {}
-                rel['name'] = item['rel'].__class__.__name__
-                n2 = {}
-                n2['cate'] = item['n2']['name']
-                n2['name'] = item['n2']['name']
-                target_data.append({
-                    'n1': n1,
-                    'rel': rel,
-                    'n2': n2
-                })
-            newdata = [{key: {key2: value.replace(': ', ':') for key2, value in sub_dict.items()} for key, sub_dict in
-                        dict_item.items()} for dict_item in target_data]
+            newdata=sortDict(searchResult)
             return render(request, 'mirtargetnetwork.html', {'searchResult': json.dumps(newdata, ensure_ascii=False)})
     return render(request, 'mirtargetnetwork.html',{'searchResult': json.dumps(searchResult, ensure_ascii=False)})
 
