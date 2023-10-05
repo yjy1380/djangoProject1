@@ -23,7 +23,7 @@ mysql测试数据
 “mirna关系网”页面可以根据名称或关系进行可视化显示
 
 ![image](https://github.com/yjy1380/djangoProject1/blob/main/app01/static/img/%E6%88%AA%E5%B1%8F2023-10-05%2014.41.37.png)
-![image]()
+![image](https://github.com/yjy1380/djangoProject1/blob/main/app01/static/img/%E6%88%AA%E5%B1%8F2023-10-05%2014.41.53.png)
 
 后续页面还未完成
 
