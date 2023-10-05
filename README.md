@@ -14,7 +14,7 @@
 
 mysql测试数据
 
-![image]()
+![image](https://github.com/yjy1380/djangoProject1/blob/main/app01/static/img/%E6%88%AA%E5%B1%8F2023-10-05%2014.56.35.png)
 
 ”浏览“页面可以根据名称查找
 
